@@ -437,6 +437,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_json_vulnerability">JSON vulnerability</a></li>
 </ul>
 </li>
+<li><a href="#_glossary">Glossary</a></li>
 <li><a href="#_ping">Ping</a>
 <ul class="sectlevel2">
 <li><a href="#_request">Request</a></li>
@@ -823,6 +824,46 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
+<h2 id="_glossary">Glossary</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Some terms that we would be using often in the documentation are given below.</p>
+</div>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">ADMIN</dt>
+<dd>
+<p>A user having "ADMIN" in his roles collection.</p>
+</dd>
+<dt class="hdlist1">Unverified user</dt>
+<dd>
+<p>A user having "UNVERIFIED" in his roles collection.</p>
+</dd>
+<dt class="hdlist1">Blocked user</dt>
+<dd>
+<p>A user having "BLOCKED" in his roles collection.</p>
+</dd>
+<dt class="hdlist1">Bad user</dt>
+<dd>
+<p>An unverified or blocked user.</p>
+</dd>
+<dt class="hdlist1">Good user</dt>
+<dd>
+<p>A user who is not bad.</p>
+</dd>
+<dt class="hdlist1">Bad ADMIN</dt>
+<dd>
+<p>An ADMIN who is a bad user.</p>
+</dd>
+<dt class="hdlist1">Good ADMIN</dt>
+<dd>
+<p>An ADMIN who is a good user.</p>
+</dd>
+</dl>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_ping">Ping</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -852,8 +893,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: XSRF-TOKEN=be5c3259-15ce-4310-b582-07b038d83ff8;path=/
-Date: Sun, 14 May 2017 14:07:51 GMT</code></pre>
+Set-Cookie: XSRF-TOKEN=468bc051-4d4b-4189-ba5b-94bbad08c637;path=/
+Date: Sun, 14 May 2017 17:08:59 GMT</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -909,9 +950,9 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: XSRF-TOKEN=868cd74f-f761-4861-8205-7b68a36d33b6;path=/
-Set-Cookie: JSESSIONID=14F3752E28161E93FFDA156C8717B816;path=/;HttpOnly
-Date: Sun, 14 May 2017 14:07:51 GMT</code></pre>
+Set-Cookie: XSRF-TOKEN=e70c7541-fa5a-4417-9e42-bde3d7938979;path=/
+Set-Cookie: JSESSIONID=0089B0A0E18DC6205F49BD15294561AB;path=/;HttpOnly
+Date: Sun, 14 May 2017 17:08:58 GMT</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -979,10 +1020,10 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: XSRF-TOKEN=d68ca546-e3a8-43b1-ba63-d0c9742642a8;path=/
+Set-Cookie: XSRF-TOKEN=272e2e18-cbb0-4cf9-9aca-ed6fc0cf6ad0;path=/
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sun, 14 May 2017 14:07:51 GMT
+Date: Sun, 14 May 2017 17:08:59 GMT
 Content-Length: 733
 
 {
@@ -1011,9 +1052,9 @@ Content-Length: 733
     } ],
     "name" : "Administrator",
     "username" : "admin@example.com",
-    "accountNonLocked" : true,
     "credentialsNonExpired" : true,
     "accountNonExpired" : true,
+    "accountNonLocked" : true,
     "enabled" : true,
     "new" : false
   }
@@ -1094,7 +1135,7 @@ Content-Length: 733
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /login HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: cf24ce13-e3e8-42ea-82f2-b5fbcd75e50e
+X-XSRF-TOKEN: ef010dc4-04fc-45a1-a258-42727d9df2e8
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com
 
@@ -1142,13 +1183,13 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: JSESSIONID=764FDFB24DBC2B21368A98D67189A8A1;path=/;HttpOnly
+Set-Cookie: JSESSIONID=CD5C0C908C8BF7C3104DB06E50C72B4A;path=/;HttpOnly
 Set-Cookie: XSRF-TOKEN=;Max-Age=0;path=/
-Set-Cookie: XSRF-TOKEN=aed9008a-495e-4835-a9ca-6e39407c128e;path=/
-Set-Cookie: rememberMe=YWRtaW5AZXhhbXBsZS5jb206MTQ5NTk4MDQ3MDY3MDoxNDI2ZTRiYmQ1NzFhYjU5ZjM5MjM3MWZjNGZlYTUwNA;Max-Age=1209600;path=/;HttpOnly
+Set-Cookie: XSRF-TOKEN=aaa6da3b-4c04-4b9b-94e3-775399ed5ff4;path=/
+Set-Cookie: rememberMe=YWRtaW5AZXhhbXBsZS5jb206MTQ5NTk5MTMzODU2OTo4MWIzNWEyNTI0NTRjNzVkNDlmNGY0ODAwZjBlMjc2OQ;Max-Age=1209600;path=/;HttpOnly
 Content-Type: application/json
 Content-Length: 590
-Date: Sun, 14 May 2017 14:07:50 GMT
+Date: Sun, 14 May 2017 17:08:57 GMT
 
 {
   "id" : 3,
@@ -1170,9 +1211,9 @@ Date: Sun, 14 May 2017 14:07:50 GMT
   } ],
   "name" : "Administrator",
   "username" : "admin@example.com",
-  "accountNonLocked" : true,
   "credentialsNonExpired" : true,
   "accountNonExpired" : true,
+  "accountNonLocked" : true,
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -1261,7 +1302,7 @@ Date: Sun, 14 May 2017 14:07:50 GMT
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /logout HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 23af69ee-959f-4b7e-9a60-f3e02204c35b
+X-XSRF-TOKEN: e4442ae8-f66f-4ee9-9d97-7ddb6bba5dbd
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com</code></pre>
 </div>
@@ -1281,7 +1322,7 @@ X-Frame-Options: DENY
 Set-Cookie: JSESSIONID=;Max-Age=0;path=/
 Set-Cookie: rememberMe=;Max-Age=0;path=/
 Set-Cookie: XSRF-TOKEN=;Max-Age=0;path=/
-Date: Sun, 14 May 2017 14:07:50 GMT</code></pre>
+Date: Sun, 14 May 2017 17:08:58 GMT</code></pre>
 </div>
 </div>
 </div>
@@ -1322,7 +1363,7 @@ Date: Sun, 14 May 2017 14:07:50 GMT</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /login/impersonate HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 7d891c31-2ff6-475b-b2af-3c44e874d906
+X-XSRF-TOKEN: f73fc8f4-d15b-4fb1-b5ac-f3f5ad1c200c
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com
 
@@ -1343,7 +1384,7 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Type: application/json
 Content-Length: 507
-Date: Sun, 14 May 2017 14:08:05 GMT
+Date: Sun, 14 May 2017 17:09:12 GMT
 
 {
   "id" : 86,
@@ -1361,9 +1402,9 @@ Date: Sun, 14 May 2017 14:08:05 GMT
   } ],
   "name" : "User 1",
   "username" : "user1@example.com",
-  "accountNonLocked" : true,
   "credentialsNonExpired" : true,
   "accountNonExpired" : true,
+  "accountNonLocked" : true,
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -1379,7 +1420,7 @@ Date: Sun, 14 May 2017 14:08:05 GMT
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /logout/impersonate HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: d096c356-d4d7-4213-a458-1335b196c49a
+X-XSRF-TOKEN: 1e291dff-eb58-476e-a363-afdb16dee6a1
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com</code></pre>
 </div>
@@ -1398,7 +1439,7 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Type: application/json
 Content-Length: 591
-Date: Sun, 14 May 2017 14:08:05 GMT
+Date: Sun, 14 May 2017 17:09:13 GMT
 
 {
   "id" : 85,
@@ -1420,9 +1461,9 @@ Date: Sun, 14 May 2017 14:08:05 GMT
   } ],
   "name" : "Administrator",
   "username" : "admin@example.com",
-  "accountNonLocked" : true,
   "credentialsNonExpired" : true,
   "accountNonExpired" : true,
+  "accountNonLocked" : true,
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -1479,7 +1520,7 @@ Date: Sun, 14 May 2017 14:08:05 GMT
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 4f849c1b-728b-457a-9ae7-762cd59d808f
+X-XSRF-TOKEN: 91e9ccfa-e12c-4259-8f58-42c8b1449e48
 Content-Type: application/json;charset=UTF-8
 Host: www.example.com
 Content-Length: 85
@@ -1521,7 +1562,7 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sun, 14 May 2017 14:08:04 GMT
+Date: Sun, 14 May 2017 17:09:12 GMT
 Content-Length: 507
 
 {
@@ -1540,9 +1581,9 @@ Content-Length: 507
   } ],
   "name" : "User 1",
   "username" : "user1@example.com",
-  "accountNonLocked" : true,
   "credentialsNonExpired" : true,
   "accountNonExpired" : true,
+  "accountNonLocked" : true,
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -1658,8 +1699,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: XSRF-TOKEN=9f17654e-9009-4556-bf99-1d8800f75df0;path=/
-Date: Sun, 14 May 2017 14:08:02 GMT</code></pre>
+Set-Cookie: XSRF-TOKEN=9cc6e340-d11e-449a-9a73-d3cb0821af12;path=/
+Date: Sun, 14 May 2017 17:09:11 GMT</code></pre>
 </div>
 </div>
 </div>
@@ -1739,9 +1780,9 @@ Date: Sun, 14 May 2017 14:08:02 GMT</code></pre>
 <h3 id="_request_8">Request</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/f971b532-c92a-457c-b6ba-3910233d008c/verify HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/fa5828f5-8e6a-4f97-a8fe-52a1b91fd9d5/verify HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: d76bd8e2-eb19-4d38-ba68-29d85b8560a8
+X-XSRF-TOKEN: 6a510dd5-1fb1-4a9c-9bbb-365d38ecd61d
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com</code></pre>
 </div>
@@ -1782,7 +1823,7 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sun, 14 May 2017 14:08:09 GMT
+Date: Sun, 14 May 2017 17:09:16 GMT
 Content-Length: 494
 
 {
@@ -1801,9 +1842,9 @@ Content-Length: 494
   } ],
   "name" : "User 1",
   "username" : "user1@example.com",
-  "accountNonLocked" : true,
   "credentialsNonExpired" : true,
   "accountNonExpired" : true,
+  "accountNonLocked" : true,
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -1900,7 +1941,7 @@ Content-Length: 494
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/forgot-password HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 3a1afa36-7863-43a4-8e4c-b00151b759f7
+X-XSRF-TOKEN: 2932b2e7-6f49-41b6-bb80-2c15ff49af45
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com
 
@@ -1925,7 +1966,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Date: Sun, 14 May 2017 14:07:59 GMT</code></pre>
+Date: Sun, 14 May 2017 17:09:07 GMT</code></pre>
 </div>
 </div>
 </div>
@@ -1987,9 +2028,9 @@ Date: Sun, 14 May 2017 14:07:59 GMT</code></pre>
 <h3 id="_request_10">Request</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/57d22186-2c7c-4752-b955-29089b718172/reset-password HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/4bfc4ae0-dbb7-4783-b0c5-4c252539173c/reset-password HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 3a1afa36-7863-43a4-8e4c-b00151b759f7
+X-XSRF-TOKEN: 2932b2e7-6f49-41b6-bb80-2c15ff49af45
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com
 
@@ -2008,7 +2049,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Date: Sun, 14 May 2017 14:07:59 GMT</code></pre>
+Date: Sun, 14 May 2017 17:09:07 GMT</code></pre>
 </div>
 </div>
 </div>
@@ -2086,10 +2127,10 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: XSRF-TOKEN=f1ea1176-e60e-4246-b033-3ae67eed4d63;path=/
+Set-Cookie: XSRF-TOKEN=e2c9c355-f958-40e1-9bbb-2475411f6f52;path=/
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sun, 14 May 2017 14:07:57 GMT
+Date: Sun, 14 May 2017 17:09:05 GMT
 Content-Length: 525
 
 {
@@ -2109,9 +2150,9 @@ Content-Length: 525
   } ],
   "name" : "User 1",
   "username" : "user1@example.com",
-  "accountNonLocked" : true,
   "credentialsNonExpired" : true,
   "accountNonExpired" : true,
+  "accountNonLocked" : true,
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -2192,10 +2233,10 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: XSRF-TOKEN=128942bb-9cb1-47c6-8736-50195e5cde88;path=/
+Set-Cookie: XSRF-TOKEN=24a71da2-d219-4bc2-b342-4bdc5a12a2ab;path=/
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sun, 14 May 2017 14:07:57 GMT
+Date: Sun, 14 May 2017 17:09:05 GMT
 Content-Length: 609
 
 {
@@ -2219,9 +2260,9 @@ Content-Length: 609
   } ],
   "name" : "Administrator",
   "username" : "admin@example.com",
-  "accountNonLocked" : true,
   "credentialsNonExpired" : true,
   "accountNonExpired" : true,
+  "accountNonLocked" : true,
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -2281,7 +2322,7 @@ Content-Length: 609
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">PATCH /api/core/users/97 HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 95d48dca-51f2-4dc2-ac55-9226986a267d
+X-XSRF-TOKEN: e75c7a86-6c5b-4f4c-8c54-58c57b9059f0
 Content-Type: application/json;charset=UTF-8
 Host: www.example.com
 Content-Length: 371
@@ -2351,7 +2392,7 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sun, 14 May 2017 14:08:07 GMT
+Date: Sun, 14 May 2017 17:09:14 GMT
 Content-Length: 591
 
 {
@@ -2374,9 +2415,9 @@ Content-Length: 591
   } ],
   "name" : "Administrator",
   "username" : "admin@example.com",
-  "accountNonLocked" : true,
   "credentialsNonExpired" : true,
   "accountNonExpired" : true,
+  "accountNonLocked" : true,
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -2483,7 +2524,7 @@ Content-Length: 591
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/36/change-password HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 604b7009-e6e6-4a04-994d-17956c3e6034
+X-XSRF-TOKEN: 11a0764c-8ad1-4dba-9290-94ea0b188e33
 Content-Type: application/json;charset=UTF-8
 Host: www.example.com
 Content-Length: 102
@@ -2507,7 +2548,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Date: Sun, 14 May 2017 14:07:56 GMT</code></pre>
+Date: Sun, 14 May 2017 17:09:04 GMT</code></pre>
 </div>
 </div>
 </div>
@@ -2586,7 +2627,7 @@ Date: Sun, 14 May 2017 14:07:56 GMT</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/58/request-email-change HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 341d28e6-03e4-4e96-a695-6b60402499c7
+X-XSRF-TOKEN: e6eb902d-1d0b-4c8d-adf0-6ea57060291b
 Content-Type: application/json;charset=UTF-8
 Host: www.example.com
 Content-Length: 642
@@ -2613,9 +2654,9 @@ Content-Length: 642
   "authorities" : null,
   "name" : null,
   "username" : null,
-  "accountNonLocked" : true,
   "credentialsNonExpired" : true,
   "accountNonExpired" : true,
+  "accountNonLocked" : true,
   "enabled" : true,
   "new" : true
 }</code></pre>
@@ -2636,7 +2677,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Date: Sun, 14 May 2017 14:08:00 GMT</code></pre>
+Date: Sun, 14 May 2017 17:09:08 GMT</code></pre>
 </div>
 </div>
 </div>
@@ -2721,9 +2762,9 @@ Date: Sun, 14 May 2017 14:08:00 GMT</code></pre>
 <h3 id="_request_16">Request</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/0d9ae1a8-4857-4c0b-8b26-2d411fcc7f17/change-email HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/f96627ff-0949-4edd-b984-46ccb8afcb9a/change-email HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: f0ff4f1e-7e21-47c5-9ce4-742d9581c49f
+X-XSRF-TOKEN: af87d433-43f9-4965-827d-40a78810d73f
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com</code></pre>
 </div>
@@ -2762,7 +2803,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Date: Sun, 14 May 2017 14:07:53 GMT</code></pre>
+Date: Sun, 14 May 2017 17:09:02 GMT</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2841,7 +2882,7 @@ Date: Sun, 14 May 2017 14:07:53 GMT</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/1/api-key HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 0a086ba2-1dfc-4a5c-ac9a-dd2ee9c377cf
+X-XSRF-TOKEN: 3eb41810-13d0-4d0e-a1c5-e893655309e1
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com</code></pre>
 </div>
@@ -2860,11 +2901,11 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sun, 14 May 2017 14:07:48 GMT
+Date: Sun, 14 May 2017 17:08:56 GMT
 Content-Length: 57
 
 {
-  "apiKey" : "814c84fa-cbe9-4a3a-87e9-d183c66f5a28"
+  "apiKey" : "43b72b5c-cd08-43d4-8056-1659f6cbe0db"
 }</code></pre>
 </div>
 </div>
@@ -2895,7 +2936,7 @@ Content-Length: 57
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">PATCH /api/core/users/1 HTTP/1.1
-Authorization: Bearer 1:814c84fa-cbe9-4a3a-87e9-d183c66f5a28
+Authorization: Bearer 1:43b72b5c-cd08-43d4-8056-1659f6cbe0db
 Accept: */*
 Content-Type: application/json;charset=UTF-8
 Host: www.example.com
@@ -2953,10 +2994,10 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: XSRF-TOKEN=0e52f5d0-8631-48e0-8d71-e6cfdcb36640;path=/
+Set-Cookie: XSRF-TOKEN=a10615cf-8f75-41bb-88e5-4feb3bb53df8;path=/
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sun, 14 May 2017 14:07:49 GMT
+Date: Sun, 14 May 2017 17:08:56 GMT
 Content-Length: 588
 
 {
@@ -2979,9 +3020,9 @@ Content-Length: 588
   } ],
   "name" : "Edited name",
   "username" : "admin@example.com",
-  "accountNonLocked" : true,
   "credentialsNonExpired" : true,
   "accountNonExpired" : true,
+  "accountNonLocked" : true,
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -3002,7 +3043,7 @@ Content-Length: 588
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /api/core/users/1/api-key HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 4105ddc3-4b13-4fb7-9e6c-523fe58199de
+X-XSRF-TOKEN: 06408aa9-3c8c-4a6a-a094-f78297d6a076
 Host: www.example.com</code></pre>
 </div>
 </div>
@@ -3018,7 +3059,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Date: Sun, 14 May 2017 14:07:49 GMT</code></pre>
+Date: Sun, 14 May 2017 17:08:57 GMT</code></pre>
 </div>
 </div>
 </div>
@@ -3040,7 +3081,7 @@ Date: Sun, 14 May 2017 14:07:49 GMT</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-05-14 19:35:38 IST
+Last updated 2017-05-14 22:38:18 IST
 </div>
 </div>
 </body>
