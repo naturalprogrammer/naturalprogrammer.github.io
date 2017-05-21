@@ -437,7 +437,18 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_json_vulnerability">JSON vulnerability</a></li>
 </ul>
 </li>
-<li><a href="#_glossary">Glossary</a></li>
+<li><a href="#_common_terms">Common terms</a></li>
+<li><a href="#_common_business_rules">Common Business Rules</a>
+<ul class="sectlevel2">
+<li><a href="#accessing-users">Accessing Users</a></li>
+<li><a href="#user-constraints">User entity validation constraints</a></li>
+</ul>
+</li>
+<li><a href="#_data_structure">Data structure</a>
+<ul class="sectlevel2">
+<li><a href="#user-data">User data</a></li>
+</ul>
+</li>
 <li><a href="#_ping">Ping</a>
 <ul class="sectlevel2">
 <li><a href="#_request">Request</a></li>
@@ -577,7 +588,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_negative_test_cases_11">Negative test cases</a></li>
 </ul>
 </li>
-<li><a href="#_change_email">Change email</a>
+<li><a href="#change-email">Change email</a>
 <ul class="sectlevel2">
 <li><a href="#_request_16">Request</a></li>
 <li><a href="#_response_16">Response</a></li>
@@ -667,7 +678,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>Refer <a href="https://gum.co/exuo/associate">Spring Framework REST API Development - A Complete Blueprint</a> for details.</p>
+<p>Refer <a href="https://github.com/naturalprogrammer/spring-lemon#documentation-and-resources">documentation and resources</a> for more details.</p>
 </div>
 <div class="sect3">
 <h4 id="_csrf">CSRF</h4>
@@ -696,7 +707,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="paragraph">
-<p>The book <a href="https://gum.co/exuo/associate">Spring Framework REST API Development - A Complete Blueprint</a> covers it in details.</p>
+<p>Refer <a href="https://github.com/naturalprogrammer/spring-lemon#documentation-and-resources">documentation and resources</a> for more details.</p>
 </div>
 <div class="sect4">
 <h5 id="_csrf_and_angularjs">CSRF and AngularJS</h5>
@@ -824,7 +835,7 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
-<h2 id="_glossary">Glossary</h2>
+<h2 id="_common_terms">Common terms</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Some terms that we would be using often in the documentation are given below.</p>
@@ -864,6 +875,150 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 </div>
 </div>
 <div class="sect1">
+<h2 id="_common_business_rules">Common Business Rules</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section documents the common business rules, which are referred from multiple places in the API documentation.</p>
+</div>
+<div class="sect2">
+<h3 id="accessing-users">Accessing Users</h3>
+<div class="sect3">
+<h4 id="_who_is_permitted_to_edit_a_user_entity">Who is permitted to edit a User entity</h4>
+<div class="sect4">
+<h5 id="_editing_the_fields">Editing the fields</h5>
+<div class="paragraph">
+<p>A user can be edited either by himself or a good ADMIN.</p>
+</div>
+</div>
+<div class="sect4">
+<h5 id="_adding_or_removing_roles">Adding or removing roles</h5>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>roles can only be edited by good ADMINs.</p>
+</li>
+<li>
+<p>A user can&#8217;t edit his own roles even if he is a good ADMIN.</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_confidential_fields">Confidential fields</h4>
+<div class="paragraph">
+<p>When fetching a user (either by email or id),
+. <code>createdDate</code>, <code>lastModifiedDate</code>, <code>password</code>, <code>verificationCode</code> and <code>forgotPasswordCode</code> are not returned.
+. <code>email</code> and <code>username</code> are not returned if the logged in user does not have <em>right to edit the fields (see above)</em> of the user being fetched.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="user-constraints">User entity validation constraints</h3>
+<div class="sect3">
+<h4 id="_email">email</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Should not be null</p>
+</li>
+<li>
+<p>Should not be blank</p>
+</li>
+<li>
+<p>Should be between 4 and 250 characters long</p>
+</li>
+<li>
+<p>Should be well-formed email format</p>
+</li>
+<li>
+<p>Should be unique</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_password">password</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Should not be null</p>
+</li>
+<li>
+<p>Should not be blank</p>
+</li>
+<li>
+<p>Should be between 4 and 30 characters long</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_name">name</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Should not be blank</p>
+</li>
+<li>
+<p>Should be between 1 and 50 characters long</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_structure">Data structure</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This section documents some data structures used in the application.</p>
+</div>
+<div class="sect2">
+<h3 id="user-data">User data</h3>
+<div class="paragraph">
+<p>Fetch user by email or id returns data about a user. The data looks like this:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="highlight"><code class="language-json" data-lang="json">{
+    "id": 24,
+    "version": 5,
+    "email": "admin@example.com",
+    "roles": [
+        "ADMIN"
+    ],
+    "unverified": false,
+    "blocked": false,
+    "admin": true,
+    "goodUser": true,
+    "goodAdmin": true,
+    "editable": true,
+    "rolesEditable": false,
+    "name": "Administrator",
+    "username": "admin@example.com",
+    "authorities": [
+        {
+            "authority": "ROLE_ADMIN"
+        },
+        {
+            "authority": "ROLE_GOOD_ADMIN"
+        },
+        {
+            "authority": "ROLE_GOOD_USER"
+        }
+    ]
+}</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Note that the fields that the logged in user wouldn&#8217;t have rights to view would be omitted. Refer the <a href="https://github.com/naturalprogrammer/spring-lemon#documentation-and-resources">documentation and resources</a> for more details.</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="_ping">Ping</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -893,8 +1048,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: XSRF-TOKEN=468bc051-4d4b-4189-ba5b-94bbad08c637;path=/
-Date: Sun, 14 May 2017 17:08:59 GMT</code></pre>
+Set-Cookie: XSRF-TOKEN=a5aaae27-731c-46eb-a2d6-b36c5fd77057; Path=/
+Date: Sun, 21 May 2017 15:55:24 GMT</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -950,9 +1105,9 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: XSRF-TOKEN=e70c7541-fa5a-4417-9e42-bde3d7938979;path=/
-Set-Cookie: JSESSIONID=0089B0A0E18DC6205F49BD15294561AB;path=/;HttpOnly
-Date: Sun, 14 May 2017 17:08:58 GMT</code></pre>
+Set-Cookie: XSRF-TOKEN=03125b3f-d04d-42fd-b3e6-80757bff5080; Path=/
+Set-Cookie: JSESSIONID=CF6D03825A4F815F9D1357CF92385C61; Path=/; HttpOnly
+Date: Sun, 21 May 2017 15:55:23 GMT</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -1020,10 +1175,10 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: XSRF-TOKEN=272e2e18-cbb0-4cf9-9aca-ed6fc0cf6ad0;path=/
+Set-Cookie: XSRF-TOKEN=d74c6a5c-4d12-413e-83d7-58477e21d5c4; Path=/
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sun, 14 May 2017 17:08:59 GMT
+Date: Sun, 21 May 2017 15:55:24 GMT
 Content-Length: 733
 
 {
@@ -1051,10 +1206,10 @@ Content-Length: 733
       "authority" : "ROLE_GOOD_ADMIN"
     } ],
     "name" : "Administrator",
-    "username" : "admin@example.com",
-    "credentialsNonExpired" : true,
     "accountNonExpired" : true,
     "accountNonLocked" : true,
+    "credentialsNonExpired" : true,
+    "username" : "admin@example.com",
     "enabled" : true,
     "new" : false
   }
@@ -1099,7 +1254,7 @@ Content-Length: 733
 <p><em>user</em> would be omitted if nobody is logged in.</p>
 </div>
 <div class="paragraph">
-<p>Refer the book <a href="https://gum.co/exuo/associate">Spring Framework REST API Development - A Complete Blueprint</a> to know how to customize this response and other details.</p>
+<p>Refer <a href="https://github.com/naturalprogrammer/spring-lemon#documentation-and-resources">documentation and resources</a> to know how to customize this response and other details.</p>
 </div>
 </div>
 <div class="sect2">
@@ -1135,7 +1290,7 @@ Content-Length: 733
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /login HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: ef010dc4-04fc-45a1-a258-42727d9df2e8
+X-XSRF-TOKEN: 2de4bf75-df0e-472b-8aa5-6131970d4b8f
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com
 
@@ -1183,13 +1338,13 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: JSESSIONID=CD5C0C908C8BF7C3104DB06E50C72B4A;path=/;HttpOnly
-Set-Cookie: XSRF-TOKEN=;Max-Age=0;path=/
-Set-Cookie: XSRF-TOKEN=aaa6da3b-4c04-4b9b-94e3-775399ed5ff4;path=/
-Set-Cookie: rememberMe=YWRtaW5AZXhhbXBsZS5jb206MTQ5NTk5MTMzODU2OTo4MWIzNWEyNTI0NTRjNzVkNDlmNGY0ODAwZjBlMjc2OQ;Max-Age=1209600;path=/;HttpOnly
+Set-Cookie: JSESSIONID=6A1271909C372A891F59F1CF20C44D79; Path=/; HttpOnly
+Set-Cookie: XSRF-TOKEN=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/
+Set-Cookie: XSRF-TOKEN=14d619d3-9816-4faa-b2ac-0c0b8bcc9a38; Path=/
+Set-Cookie: rememberMe=YWRtaW5AZXhhbXBsZS5jb206MTQ5NjU5MTcyMjU1NjphN2I1YzczYTExYjk2ZDNmM2EwNDA2ZTc1NjdkOWEwNA; Max-Age=1209600; Expires=Sun, 04-Jun-2017 15:55:22 GMT; Path=/; HttpOnly
 Content-Type: application/json
 Content-Length: 590
-Date: Sun, 14 May 2017 17:08:57 GMT
+Date: Sun, 21 May 2017 15:55:21 GMT
 
 {
   "id" : 3,
@@ -1210,10 +1365,10 @@ Date: Sun, 14 May 2017 17:08:57 GMT
     "authority" : "ROLE_GOOD_ADMIN"
   } ],
   "name" : "Administrator",
-  "username" : "admin@example.com",
-  "credentialsNonExpired" : true,
   "accountNonExpired" : true,
   "accountNonLocked" : true,
+  "credentialsNonExpired" : true,
+  "username" : "admin@example.com",
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -1302,7 +1457,7 @@ Date: Sun, 14 May 2017 17:08:57 GMT
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /logout HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: e4442ae8-f66f-4ee9-9d97-7ddb6bba5dbd
+X-XSRF-TOKEN: 35d2c53a-4981-48b5-9d10-a63082adc33a
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com</code></pre>
 </div>
@@ -1319,10 +1474,10 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: JSESSIONID=;Max-Age=0;path=/
-Set-Cookie: rememberMe=;Max-Age=0;path=/
-Set-Cookie: XSRF-TOKEN=;Max-Age=0;path=/
-Date: Sun, 14 May 2017 17:08:58 GMT</code></pre>
+Set-Cookie: JSESSIONID=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/
+Set-Cookie: rememberMe=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/
+Set-Cookie: XSRF-TOKEN=; Max-Age=0; Expires=Thu, 01-Jan-1970 00:00:10 GMT; Path=/
+Date: Sun, 21 May 2017 15:55:23 GMT</code></pre>
 </div>
 </div>
 </div>
@@ -1363,7 +1518,7 @@ Date: Sun, 14 May 2017 17:08:58 GMT</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /login/impersonate HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: f73fc8f4-d15b-4fb1-b5ac-f3f5ad1c200c
+X-XSRF-TOKEN: 33e68dfe-b18d-412a-8efc-12b7bbd619a0
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com
 
@@ -1384,7 +1539,7 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Type: application/json
 Content-Length: 507
-Date: Sun, 14 May 2017 17:09:12 GMT
+Date: Sun, 21 May 2017 15:55:37 GMT
 
 {
   "id" : 86,
@@ -1401,10 +1556,10 @@ Date: Sun, 14 May 2017 17:09:12 GMT
     "authority" : "ROLE_UNVERIFIED"
   } ],
   "name" : "User 1",
-  "username" : "user1@example.com",
-  "credentialsNonExpired" : true,
   "accountNonExpired" : true,
   "accountNonLocked" : true,
+  "credentialsNonExpired" : true,
+  "username" : "user1@example.com",
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -1420,7 +1575,7 @@ Date: Sun, 14 May 2017 17:09:12 GMT
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /logout/impersonate HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 1e291dff-eb58-476e-a363-afdb16dee6a1
+X-XSRF-TOKEN: 23ba1635-6248-4dba-b881-8b832eeeda98
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com</code></pre>
 </div>
@@ -1439,7 +1594,7 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Type: application/json
 Content-Length: 591
-Date: Sun, 14 May 2017 17:09:13 GMT
+Date: Sun, 21 May 2017 15:55:37 GMT
 
 {
   "id" : 85,
@@ -1460,10 +1615,10 @@ Date: Sun, 14 May 2017 17:09:13 GMT
     "authority" : "ROLE_GOOD_ADMIN"
   } ],
   "name" : "Administrator",
-  "username" : "admin@example.com",
-  "credentialsNonExpired" : true,
   "accountNonExpired" : true,
   "accountNonLocked" : true,
+  "credentialsNonExpired" : true,
+  "username" : "admin@example.com",
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -1520,7 +1675,7 @@ Date: Sun, 14 May 2017 17:09:13 GMT
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 91e9ccfa-e12c-4259-8f58-42c8b1449e48
+X-XSRF-TOKEN: 7f2234a6-68ac-460c-91c8-525c6630491e
 Content-Type: application/json;charset=UTF-8
 Host: www.example.com
 Content-Length: 85
@@ -1538,7 +1693,7 @@ Content-Length: 85
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>At the server side, set a couple of properties, as described <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/configuring/setting-up-application-properties.html">here</a>.</p>
+<p>At the server side, set a couple of properties, as described in the <a href="https://github.com/naturalprogrammer/spring-lemon#documentation-and-resources">getting started guide</a>.</p>
 </li>
 <li>
 <p>At the client side, for an AngularJS client, <a href="https://github.com/VividCortex/angular-recaptcha">angular-recaptcha</a> works great. Remember to send the captcha response in the <code>captchaResponse</code> field.</p>
@@ -1562,7 +1717,7 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sun, 14 May 2017 17:09:12 GMT
+Date: Sun, 21 May 2017 15:55:36 GMT
 Content-Length: 507
 
 {
@@ -1580,10 +1735,10 @@ Content-Length: 507
     "authority" : "ROLE_UNVERIFIED"
   } ],
   "name" : "User 1",
-  "username" : "user1@example.com",
-  "credentialsNonExpired" : true,
   "accountNonExpired" : true,
   "accountNonLocked" : true,
+  "credentialsNonExpired" : true,
+  "username" : "user1@example.com",
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -1598,7 +1753,7 @@ Content-Length: 507
 <p>Nobody should have already logged in.</p>
 </li>
 <li>
-<p>Email, password and name should be <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/common/user_constraints.html">valid</a>.</p>
+<p>Email, password and name should be <a href="#user-constraints">valid</a>.</p>
 </li>
 <li>
 <p>The role UNVERIFIED is added to the user upon sign up.</p>
@@ -1659,7 +1814,7 @@ Content-Length: 507
 <p>After being already logged in.</p>
 </li>
 <li>
-<p>With <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/common/user_constraints.html">invalid</a> email, password or name.</p>
+<p>With <a href="#user-constraints">invalid</a> email, password or name.</p>
 </li>
 <li>
 <p>Using an email id which is already signed up.</p>
@@ -1699,8 +1854,8 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: XSRF-TOKEN=9cc6e340-d11e-449a-9a73-d3cb0821af12;path=/
-Date: Sun, 14 May 2017 17:09:11 GMT</code></pre>
+Set-Cookie: XSRF-TOKEN=7ed7fb98-323f-4d51-9217-90c61817c9a8; Path=/
+Date: Sun, 21 May 2017 15:55:35 GMT</code></pre>
 </div>
 </div>
 </div>
@@ -1712,7 +1867,7 @@ Date: Sun, 14 May 2017 17:09:11 GMT</code></pre>
 <p>The user should exist.</p>
 </li>
 <li>
-<p>Current-user should have <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/common/accessing_users.html">permission to edit</a> the given user.</p>
+<p>Current-user should have <a href="#accessing-users">permission to edit</a> the given user.</p>
 </li>
 <li>
 <p>The user should not have been verified.</p>
@@ -1780,9 +1935,9 @@ Date: Sun, 14 May 2017 17:09:11 GMT</code></pre>
 <h3 id="_request_8">Request</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/fa5828f5-8e6a-4f97-a8fe-52a1b91fd9d5/verify HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/00a1bf2c-7290-4275-ae7d-91c5c9386f8f/verify HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 6a510dd5-1fb1-4a9c-9bbb-365d38ecd61d
+X-XSRF-TOKEN: d8af53a1-e780-4d30-a2d6-282067ce6513
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com</code></pre>
 </div>
@@ -1823,7 +1978,7 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sun, 14 May 2017 17:09:16 GMT
+Date: Sun, 21 May 2017 15:55:41 GMT
 Content-Length: 494
 
 {
@@ -1841,10 +1996,10 @@ Content-Length: 494
     "authority" : "ROLE_GOOD_USER"
   } ],
   "name" : "User 1",
-  "username" : "user1@example.com",
-  "credentialsNonExpired" : true,
   "accountNonExpired" : true,
   "accountNonLocked" : true,
+  "credentialsNonExpired" : true,
+  "username" : "user1@example.com",
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -1941,7 +2096,7 @@ Content-Length: 494
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/forgot-password HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 2932b2e7-6f49-41b6-bb80-2c15ff49af45
+X-XSRF-TOKEN: 904a5204-94ac-43c8-b125-178d1bb3696f
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com
 
@@ -1966,7 +2121,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Date: Sun, 14 May 2017 17:09:07 GMT</code></pre>
+Date: Sun, 21 May 2017 15:55:31 GMT</code></pre>
 </div>
 </div>
 </div>
@@ -2028,9 +2183,9 @@ Date: Sun, 14 May 2017 17:09:07 GMT</code></pre>
 <h3 id="_request_10">Request</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/4bfc4ae0-dbb7-4783-b0c5-4c252539173c/reset-password HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/c7171ffd-e40d-4bea-a8ab-7e557896d758/reset-password HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 2932b2e7-6f49-41b6-bb80-2c15ff49af45
+X-XSRF-TOKEN: 904a5204-94ac-43c8-b125-178d1bb3696f
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com
 
@@ -2049,7 +2204,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Date: Sun, 14 May 2017 17:09:07 GMT</code></pre>
+Date: Sun, 21 May 2017 15:55:32 GMT</code></pre>
 </div>
 </div>
 </div>
@@ -2127,10 +2282,10 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: XSRF-TOKEN=e2c9c355-f958-40e1-9bbb-2475411f6f52;path=/
+Set-Cookie: XSRF-TOKEN=d487d066-53d5-4d88-8ba7-b9645061febf; Path=/
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sun, 14 May 2017 17:09:05 GMT
+Date: Sun, 21 May 2017 15:55:30 GMT
 Content-Length: 525
 
 {
@@ -2149,10 +2304,10 @@ Content-Length: 525
     "authority" : "ROLE_UNVERIFIED"
   } ],
   "name" : "User 1",
-  "username" : "user1@example.com",
-  "credentialsNonExpired" : true,
   "accountNonExpired" : true,
   "accountNonLocked" : true,
+  "credentialsNonExpired" : true,
+  "username" : "user1@example.com",
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -2180,13 +2335,13 @@ Content-Length: 525
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>A user should be able to fetch his data, including the confidential email and username. But other <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/common/accessing_users.html">confidential fields</a> would be omitted.</p>
+<p>A user should be able to fetch his data, including the confidential email and username. But other <a href="#accessing-users">confidential fields</a> would be omitted.</p>
 </li>
 <li>
-<p>A good ADMIN should be able to fetch another user&#8217;s data, including the confidential email and username. But other <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/common/accessing_users.html">confidential fields</a> would be omitted.</p>
+<p>A good ADMIN should be able to fetch another user&#8217;s data, including the confidential email and username. But other <a href="#accessing-users">confidential fields</a> would be omitted.</p>
 </li>
 <li>
-<p>A i) bad ADMIN, ii) non-admin or iii) anonymous user should be able to fetch another user&#8217;s data. But all the <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/common/accessing_users.html">confidential fields</a> would be omitted.</p>
+<p>A i) bad ADMIN, ii) non-admin or iii) anonymous user should be able to fetch another user&#8217;s data. But all the <a href="#accessing-users">confidential fields</a> would be omitted.</p>
 </li>
 </ol>
 </div>
@@ -2233,10 +2388,10 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: XSRF-TOKEN=24a71da2-d219-4bc2-b342-4bdc5a12a2ab;path=/
+Set-Cookie: XSRF-TOKEN=281ea03c-d4c9-416a-bce9-b1a497d3a776; Path=/
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sun, 14 May 2017 17:09:05 GMT
+Date: Sun, 21 May 2017 15:55:29 GMT
 Content-Length: 609
 
 {
@@ -2259,10 +2414,10 @@ Content-Length: 609
     "authority" : "ROLE_GOOD_ADMIN"
   } ],
   "name" : "Administrator",
-  "username" : "admin@example.com",
-  "credentialsNonExpired" : true,
   "accountNonExpired" : true,
   "accountNonLocked" : true,
+  "credentialsNonExpired" : true,
+  "username" : "admin@example.com",
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -2277,7 +2432,7 @@ Content-Length: 609
 <p>A user with the given id should exist.</p>
 </li>
 <li>
-<p>The <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/common/accessing_users.html">confidential fields</a> would be null in case the current-user does not have rights to see them.</p>
+<p>The <a href="#accessing-users">confidential fields</a> would be omitted in case the current-user does not have rights to see them.</p>
 </li>
 </ol>
 </div>
@@ -2287,13 +2442,13 @@ Content-Length: 609
 <div class="olist arabic">
 <ol class="arabic">
 <li>
-<p>A user should be able to fetch his data, including the confidential <code>email</code> and <code>username</code>. But other <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/common/accessing_users.html">confidential fields</a> would be null.</p>
+<p>A user should be able to fetch his data, including the confidential <code>email</code> and <code>username</code>. But other <a href="#accessing-users">confidential fields</a> would be omitted.</p>
 </li>
 <li>
-<p>A good ADMIN should be able to fetch another user&#8217;s data, including the confidential <code>email</code> and <code>username</code>. But other <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/common/accessing_users.html">confidential fields</a> would be null.</p>
+<p>A good ADMIN should be able to fetch another user&#8217;s data, including the confidential <code>email</code> and <code>username</code>. But other <a href="#accessing-users">confidential fields</a> would be omitted.</p>
 </li>
 <li>
-<p>A bad ADMIN, non-admin or an anonymous user should be able to fetch another user&#8217;s data. But all the <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/common/accessing_users.html">confidential fields</a> would be null.</p>
+<p>A bad ADMIN, non-admin or an anonymous user should be able to fetch another user&#8217;s data. But all the <a href="#accessing-users">confidential fields</a> would be omitted.</p>
 </li>
 </ol>
 </div>
@@ -2322,7 +2477,7 @@ Content-Length: 609
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">PATCH /api/core/users/97 HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: e75c7a86-6c5b-4f4c-8c54-58c57b9059f0
+X-XSRF-TOKEN: d9aa0bf0-1b3d-4589-9bce-12bc42fffe52
 Content-Type: application/json;charset=UTF-8
 Host: www.example.com
 Content-Length: 371
@@ -2373,7 +2528,7 @@ Content-Length: 371
 </ol>
 </div>
 <div class="paragraph">
-<p>Precisely, we are talking about optimistic locking. The book <a href="https://gum.co/exuo/associate">Spring Framework REST API Development - A Complete Blueprint</a> covers it in more details.</p>
+<p>Precisely, we are talking about optimistic locking. Refer <a href="https://github.com/naturalprogrammer/spring-lemon#documentation-and-resources">documentation and resources</a> for more details.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2392,7 +2547,7 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sun, 14 May 2017 17:09:14 GMT
+Date: Sun, 21 May 2017 15:55:39 GMT
 Content-Length: 591
 
 {
@@ -2414,10 +2569,10 @@ Content-Length: 591
     "authority" : "ROLE_GOOD_ADMIN"
   } ],
   "name" : "Administrator",
-  "username" : "admin@example.com",
-  "credentialsNonExpired" : true,
   "accountNonExpired" : true,
   "accountNonLocked" : true,
+  "credentialsNonExpired" : true,
+  "username" : "admin@example.com",
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -2432,7 +2587,7 @@ Content-Length: 591
 <p>A user with the given <code>id</code> should exist.</p>
 </li>
 <li>
-<p>Current-user should have <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/common/accessing_users.html">permission to edit</a> the given user.</p>
+<p>Current-user should have <a href="#accessing-users">permission to edit</a> the given user.</p>
 </li>
 <li>
 <p><code>roles</code> will be updated only if the current-user has <code>permission to edit</code> the roles.</p>
@@ -2448,7 +2603,7 @@ Content-Length: 591
 </div>
 </li>
 <li>
-<p>The new name <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/common/user_constraints.html">should be valid</a>.</p>
+<p>The new name <a href="#user-constraints">should be valid</a>.</p>
 </li>
 <li>
 <p>The version column should be incremented on successful update.</p>
@@ -2524,7 +2679,7 @@ Content-Length: 591
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/36/change-password HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 11a0764c-8ad1-4dba-9290-94ea0b188e33
+X-XSRF-TOKEN: c3d8f682-5611-41ad-8c2d-d6351224c5a5
 Content-Type: application/json;charset=UTF-8
 Host: www.example.com
 Content-Length: 102
@@ -2548,7 +2703,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Date: Sun, 14 May 2017 17:09:04 GMT</code></pre>
+Date: Sun, 21 May 2017 15:55:28 GMT</code></pre>
 </div>
 </div>
 </div>
@@ -2560,7 +2715,7 @@ Date: Sun, 14 May 2017 17:09:04 GMT</code></pre>
 <p>A user with the given <code>id</code> should exist.</p>
 </li>
 <li>
-<p>Current user should have <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/common/accessing_users.html">permission to edit</a> the given user.</p>
+<p>Current user should have <a href="#accessing-users">permission to edit</a> the given user.</p>
 </li>
 <li>
 <p><code>oldPassword</code>, <code>password</code> and <code>retypePassword</code> should not be null or blank, and should be between 6 and 30 characters long.
@@ -2627,7 +2782,7 @@ Date: Sun, 14 May 2017 17:09:04 GMT</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/58/request-email-change HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: e6eb902d-1d0b-4c8d-adf0-6ea57060291b
+X-XSRF-TOKEN: 694add07-5b7b-4654-9f34-4a8496b65d95
 Content-Type: application/json;charset=UTF-8
 Host: www.example.com
 Content-Length: 642
@@ -2653,17 +2808,17 @@ Content-Length: 642
   "rolesEditable" : false,
   "authorities" : null,
   "name" : null,
-  "username" : null,
-  "credentialsNonExpired" : true,
   "accountNonExpired" : true,
   "accountNonLocked" : true,
+  "credentialsNonExpired" : true,
+  "username" : null,
   "enabled" : true,
   "new" : true
 }</code></pre>
 </div>
 </div>
 <div class="paragraph">
-<p>On receiving such a request, an email containing a link is sent to the new email id. A secret <code>changeEmailCode</code> is embedded in the link. Clicking on the link brings the user back to the front-end, where first he should log in if he is not already. Then, he would click a button for sending the <a href="#final-change-email-request">[final-change-email-request]</a> for doing the final change.</p>
+<p>On receiving such a request, an email containing a link is sent to the new email id. A secret <code>changeEmailCode</code> is embedded in the link. Clicking on the link brings the user back to the front-end, where first he should log in if he is not already. Then, he would click a button for sending the <a href="#change-email">final email change request</a> for doing the final change.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2677,7 +2832,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Date: Sun, 14 May 2017 17:09:08 GMT</code></pre>
+Date: Sun, 21 May 2017 15:55:33 GMT</code></pre>
 </div>
 </div>
 </div>
@@ -2689,7 +2844,7 @@ Date: Sun, 14 May 2017 17:09:08 GMT</code></pre>
 <p>A user with the given <code>id</code> should exist.</p>
 </li>
 <li>
-<p>Current user should have <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/common/accessing_users.html">permission to edit</a> the given user.</p>
+<p>Current user should have <a href="#accessing-users">permission to edit</a> the given user.</p>
 </li>
 <li>
 <p><code>password</code> should match the password of current-user.</p>
@@ -2753,7 +2908,7 @@ Date: Sun, 14 May 2017 17:09:08 GMT</code></pre>
 </div>
 </div>
 <div class="sect1">
-<h2 id="_change_email">Change email</h2>
+<h2 id="change-email">Change email</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>When a user <a href="#request-for-changing-email">requests for changing his email</a>, a mail is sent to him, which contains a link with a <code>changeEmailCode</code> embedded. Clicking on the link brings him back to the client, where first he should login if he is not already. He then would click a button for proceeding with the change, which will send the following request to the server.</p>
@@ -2762,9 +2917,9 @@ Date: Sun, 14 May 2017 17:09:08 GMT</code></pre>
 <h3 id="_request_16">Request</h3>
 <div class="listingblock">
 <div class="content">
-<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/f96627ff-0949-4edd-b984-46ccb8afcb9a/change-email HTTP/1.1
+<pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/77e6fcf2-eb71-4d7b-8f3d-0e5d7c69afbd/change-email HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: af87d433-43f9-4965-827d-40a78810d73f
+X-XSRF-TOKEN: 936d969c-b1f7-4536-8d1e-b8f63611492a
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com</code></pre>
 </div>
@@ -2803,7 +2958,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Date: Sun, 14 May 2017 17:09:02 GMT</code></pre>
+Date: Sun, 21 May 2017 15:55:26 GMT</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -2882,7 +3037,7 @@ Date: Sun, 14 May 2017 17:09:02 GMT</code></pre>
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">POST /api/core/users/1/api-key HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 3eb41810-13d0-4d0e-a1c5-e893655309e1
+X-XSRF-TOKEN: 315e4729-90a3-4487-b0b7-35acd52cc5a2
 Content-Type: application/x-www-form-urlencoded; charset=ISO-8859-1
 Host: www.example.com</code></pre>
 </div>
@@ -2901,11 +3056,11 @@ Expires: 0
 X-Frame-Options: DENY
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sun, 14 May 2017 17:08:56 GMT
+Date: Sun, 21 May 2017 15:55:20 GMT
 Content-Length: 57
 
 {
-  "apiKey" : "43b72b5c-cd08-43d4-8056-1659f6cbe0db"
+  "apiKey" : "859d1e7b-7cbb-485c-b252-6e1c7a017aed"
 }</code></pre>
 </div>
 </div>
@@ -2918,7 +3073,7 @@ Content-Length: 57
 <p>A user with the given <code>id</code> should exist.</p>
 </li>
 <li>
-<p>Current user should have <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/common/accessing_users.html">permission to edit</a> the given user.</p>
+<p>Current user should have <a href="#accessing-users">permission to edit</a> the given user.</p>
 </li>
 </ol>
 </div>
@@ -2936,7 +3091,7 @@ Content-Length: 57
 <div class="listingblock">
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">PATCH /api/core/users/1 HTTP/1.1
-Authorization: Bearer 1:43b72b5c-cd08-43d4-8056-1659f6cbe0db
+Authorization: Bearer 1:859d1e7b-7cbb-485c-b252-6e1c7a017aed
 Accept: */*
 Content-Type: application/json;charset=UTF-8
 Host: www.example.com
@@ -2994,10 +3149,10 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Set-Cookie: XSRF-TOKEN=a10615cf-8f75-41bb-88e5-4feb3bb53df8;path=/
+Set-Cookie: XSRF-TOKEN=56dc9c2a-4469-4087-8fa9-bd66471d2b17; Path=/
 Content-Type: application/json;charset=UTF-8
 Transfer-Encoding: chunked
-Date: Sun, 14 May 2017 17:08:56 GMT
+Date: Sun, 21 May 2017 15:55:20 GMT
 Content-Length: 588
 
 {
@@ -3019,10 +3174,10 @@ Content-Length: 588
     "authority" : "ROLE_GOOD_ADMIN"
   } ],
   "name" : "Edited name",
-  "username" : "admin@example.com",
-  "credentialsNonExpired" : true,
   "accountNonExpired" : true,
   "accountNonLocked" : true,
+  "credentialsNonExpired" : true,
+  "username" : "admin@example.com",
   "enabled" : true,
   "new" : false
 }</code></pre>
@@ -3043,7 +3198,7 @@ Content-Length: 588
 <div class="content">
 <pre class="highlight nowrap"><code class="language-http" data-lang="http">DELETE /api/core/users/1/api-key HTTP/1.1
 Accept: */*
-X-XSRF-TOKEN: 06408aa9-3c8c-4a6a-a094-f78297d6a076
+X-XSRF-TOKEN: 2d9da505-71ed-4cf3-935c-b9f225d30c61
 Host: www.example.com</code></pre>
 </div>
 </div>
@@ -3059,7 +3214,7 @@ Cache-Control: no-cache, no-store, max-age=0, must-revalidate
 Pragma: no-cache
 Expires: 0
 X-Frame-Options: DENY
-Date: Sun, 14 May 2017 17:08:57 GMT</code></pre>
+Date: Sun, 21 May 2017 15:55:21 GMT</code></pre>
 </div>
 </div>
 </div>
@@ -3071,7 +3226,7 @@ Date: Sun, 14 May 2017 17:08:57 GMT</code></pre>
 <p>A user with the given <code>id</code> should exist.</p>
 </li>
 <li>
-<p>Current user should have <a href="https://naturalprogrammer.gitbooks.io/spring-lemon-getting-started/content/common/accessing_users.html">permission to edit</a> the given user.</p>
+<p>Current user should have <a href="#accessing-users">permission to edit</a> the given user.</p>
 </li>
 </ol>
 </div>
@@ -3081,7 +3236,7 @@ Date: Sun, 14 May 2017 17:08:57 GMT</code></pre>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-05-14 22:38:18 IST
+Last updated 2017-05-21 21:07:28 IST
 </div>
 </div>
 </body>
