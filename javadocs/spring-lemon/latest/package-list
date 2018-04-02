@@ -1,0 +1,9 @@
+com.naturalprogrammer.spring.lemon
+com.naturalprogrammer.spring.lemon.domain
+com.naturalprogrammer.spring.lemon.exceptions
+com.naturalprogrammer.spring.lemon.exceptions.handlers
+com.naturalprogrammer.spring.lemon.mail
+com.naturalprogrammer.spring.lemon.permissions
+com.naturalprogrammer.spring.lemon.security
+com.naturalprogrammer.spring.lemon.util
+com.naturalprogrammer.spring.lemon.validation
