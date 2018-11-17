@@ -1,4 +1,7 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Sat Oct 13 19:47:29 IST 2018
-https\://repo.maven.apache.org/maven2/.lastUpdated=1539440249140
+#Sun Nov 11 10:33:11 IST 2018
+https\://repo.maven.apache.org/maven2/.lastUpdated=1541912591558
+https\://nexus.live.aws.tomorrow.one/repository/gf/.error=Could not transfer artifact com.naturalprogrammer\:spring-lemon\:pom\:1.0.0.M8 from/to gf (https\://nexus.live.aws.tomorrow.one/repository/gf)\: Access denied to https\://nexus.live.aws.tomorrow.one/repository/gf/com/naturalprogrammer/spring-lemon/1.0.0.M8/spring-lemon-1.0.0.M8.pom. Error code 401, Unauthorized
+https\://naturalprogrammer.github.io/mvn-repository/.lastUpdated=1540438501501
 https\://repo.maven.apache.org/maven2/.error=
+ad72379b60507d4ff9000c4f148685839564b04e@default-gf-https\://nexus.live.aws.tomorrow.one/repository/gf/.lastUpdated=1540438499869
