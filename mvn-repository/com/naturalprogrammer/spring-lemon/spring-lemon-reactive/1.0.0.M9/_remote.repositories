@@ -1,6 +1,5 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Sat Nov 17 20:03:29 IST 2018
-spring-lemon-reactive-1.0.0.M9.pom>=
-spring-lemon-reactive-1.0.0.M9-sources.jar>=
-spring-lemon-reactive-1.0.0.M9.jar>=
-spring-lemon-reactive-1.0.0.M9-javadoc.jar>=
+#Sat Nov 17 21:38:57 IST 2018
+spring-lemon-reactive-1.0.0.M9-sources.jar>naturalprogrammer=
+spring-lemon-reactive-1.0.0.M9.jar>naturalprogrammer=
+spring-lemon-reactive-1.0.0.M9.pom>naturalprogrammer=

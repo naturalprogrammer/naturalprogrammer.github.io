@@ -1,6 +1,5 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Sat Nov 17 20:03:25 IST 2018
-spring-lemon-jpa-1.0.0.M9-javadoc.jar>=
-spring-lemon-jpa-1.0.0.M9.jar>=
-spring-lemon-jpa-1.0.0.M9.pom>=
-spring-lemon-jpa-1.0.0.M9-sources.jar>=
+#Sat Nov 17 21:27:13 IST 2018
+spring-lemon-jpa-1.0.0.M9.pom>naturalprogrammer=
+spring-lemon-jpa-1.0.0.M9-sources.jar>naturalprogrammer=
+spring-lemon-jpa-1.0.0.M9.jar>naturalprogrammer=

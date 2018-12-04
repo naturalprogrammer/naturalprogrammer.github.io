@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat Nov 17 21:27:14 IST 2018
+https\://nexus.live.aws.tomorrow.one/repository/gf/.error=Could not transfer artifact com.naturalprogrammer.spring-lemon\:spring-lemon-commons-jpa\:jar\:sources\:1.0.0.M9 from/to gf (https\://nexus.live.aws.tomorrow.one/repository/gf)\: Access denied to https\://nexus.live.aws.tomorrow.one/repository/gf/com/naturalprogrammer/spring-lemon/spring-lemon-commons-jpa/1.0.0.M9/spring-lemon-commons-jpa-1.0.0.M9-sources.jar. Error code 401, Unauthorized
+https\://naturalprogrammer.github.io/mvn-repository/.lastUpdated=1542470234403
+ad72379b60507d4ff9000c4f148685839564b04e@default-gf-https\://nexus.live.aws.tomorrow.one/repository/gf/.lastUpdated=1542470233327
