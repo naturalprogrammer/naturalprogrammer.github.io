@@ -1,6 +1,5 @@
 #NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
-#Tue Dec 04 17:58:49 IST 2018
-spring-lemon-jpa-1.0.0.RC1-javadoc.jar>=
-spring-lemon-jpa-1.0.0.RC1.pom>=
-spring-lemon-jpa-1.0.0.RC1-sources.jar>=
-spring-lemon-jpa-1.0.0.RC1.jar>=
+#Tue Dec 04 20:22:35 IST 2018
+spring-lemon-jpa-1.0.0.RC1.pom>naturalprogrammer=
+spring-lemon-jpa-1.0.0.RC1.jar>naturalprogrammer=
+spring-lemon-jpa-1.0.0.RC1-sources.jar>naturalprogrammer=
