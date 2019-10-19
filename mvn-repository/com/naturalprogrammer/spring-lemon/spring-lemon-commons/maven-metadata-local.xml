@@ -3,10 +3,11 @@
   <groupId>com.naturalprogrammer.spring-lemon</groupId>
   <artifactId>spring-lemon-commons</artifactId>
   <versioning>
-    <release>1.0.0.RC2</release>
+    <release>1.0.0.RC3</release>
     <versions>
       <version>1.0.0.RC2</version>
+      <version>1.0.0.RC3</version>
     </versions>
-    <lastUpdated>20190203171546</lastUpdated>
+    <lastUpdated>20191019020417</lastUpdated>
   </versioning>
 </metadata>
