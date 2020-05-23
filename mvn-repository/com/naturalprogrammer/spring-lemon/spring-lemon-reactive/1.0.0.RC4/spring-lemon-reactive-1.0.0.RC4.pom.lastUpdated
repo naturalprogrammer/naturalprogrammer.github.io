@@ -1,0 +1,10 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Thu May 21 21:12:58 IST 2020
+https\://repo.spring.io/snapshot/.error=
+https\://repo.spring.io/milestone/.error=
+https\://repo.maven.apache.org/maven2/.lastUpdated=1590075778324
+https\://nexus.live.aws.tomorrow.one/repository/gf/.error=Could not transfer artifact com.naturalprogrammer.spring-lemon\:spring-lemon-reactive\:pom\:1.0.0.RC4 from/to gf (https\://nexus.live.aws.tomorrow.one/repository/gf)\: Authentication failed for https\://nexus.live.aws.tomorrow.one/repository/gf/com/naturalprogrammer/spring-lemon/spring-lemon-reactive/1.0.0.RC4/spring-lemon-reactive-1.0.0.RC4.pom 401 Unauthorized
+https\://repo.spring.io/milestone/.lastUpdated=1590075776604
+https\://repo.spring.io/snapshot/.lastUpdated=1590075776092
+https\://repo.maven.apache.org/maven2/.error=
+ad72379b60507d4ff9000c4f148685839564b04e@default-gf-https\://nexus.live.aws.tomorrow.one/repository/gf/.lastUpdated=1590075775406
