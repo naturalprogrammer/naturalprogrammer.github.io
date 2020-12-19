@@ -1,0 +1,6 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sun Jul 26 08:50:48 IST 2020
+spring-lemon-commons-jpa-1.0.0.RC5.pom>=
+spring-lemon-commons-jpa-1.0.0.RC5-sources.jar>=
+spring-lemon-commons-jpa-1.0.0.RC5.jar>=
+spring-lemon-commons-jpa-1.0.0.RC5-javadoc.jar>=

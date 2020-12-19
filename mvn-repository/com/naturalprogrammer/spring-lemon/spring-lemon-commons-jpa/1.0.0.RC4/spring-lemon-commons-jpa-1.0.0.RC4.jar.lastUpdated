@@ -1,0 +1,5 @@
+#NOTE: This is a Maven Resolver internal implementation file, its format can be changed without prior notice.
+#Sat May 23 07:44:15 IST 2020
+https\://nexus.live.aws.tomorrow.one/repository/gf/.error=Could not transfer artifact com.naturalprogrammer.spring-lemon\:spring-lemon-commons-jpa\:jar\:1.0.0.RC4 from/to gf (https\://nexus.live.aws.tomorrow.one/repository/gf)\: Authentication failed for https\://nexus.live.aws.tomorrow.one/repository/gf/com/naturalprogrammer/spring-lemon/spring-lemon-commons-jpa/1.0.0.RC4/spring-lemon-commons-jpa-1.0.0.RC4.jar 401 Unauthorized
+ad72379b60507d4ff9000c4f148685839564b04e@default-gf-https\://nexus.live.aws.tomorrow.one/repository/gf/.lastUpdated=1590200053901
+https\://naturalprogrammer.github.io/mvn-repository/.lastUpdated=1590200055523
